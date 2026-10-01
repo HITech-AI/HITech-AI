@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HITech-AI · 智启新航 AI 研学社</title>
+<style>
+  :root{
+    --canvas:#faf9f5;
+    --surface-soft:#f5f0e8;
+    --surface-card:#efe9de;
+    --surface-cream-strong:#e8e0d2;
+    --surface-dark:#181715;
+    --surface-dark-elevated:#252320;
+    --surface-dark-soft:#1f1e1b;
+    --primary:#cc785c;
+    --primary-active:#a9583e;
+    --primary-disabled:#e6dfd8;
+    --ink:#141413;
+    --body:#3d3d3a;
+    --body-strong:#252523;
+    --muted:#6c6a64;
+    --muted-soft:#8e8b82;
+    --hairline:#e6dfd8;
+    --hairline-soft:#ebe6df;
+    --on-primary:#ffffff;
+    --on-dark:#faf9f5;
+    --on-dark-soft:#a09d96;
+    --font-display:"Cormorant Garamond","Source Han Serif SC","Noto Serif SC","Songti SC","SimSun","Times New Roman",serif;
+    --font-body:"Inter","Source Han Sans SC","Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",system-ui,sans-serif;
+    --r-xs:4px; --r-sm:6px; --r-md:8px; --r-lg:12px; --r-xl:16px; --r-pill:9999px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--canvas);
+    color:var(--body);
+    line-height:1.55;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+  /* Top nav */
+  nav{
+    background:var(--canvas);
+    border-bottom:1px solid var(--hairline-soft);
+    height:64px;
+    position:sticky;top:0;z-index:50;
+  }
+  nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:500;color:var(--ink);text-decoration:none;}
+  .brand .mark{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--primary);color:#fff;font-weight:600;font-size:13px;
+  }
+  .brand b{font-size:17px;font-weight:600;letter-spacing:-0.3px;}
+  .nav-links{display:flex;gap:28px;align-items:center;list-style:none;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;opacity:.85;}
+  .nav-links a:hover{opacity:1;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:500;line-height:1;height:40px;padding:0 20px;
+    border-radius:var(--r-md);text-decoration:none;cursor:pointer;border:none;
+  }
+  .btn-primary{background:var(--primary);color:var(--on-primary);}
+  .btn-primary:hover{background:var(--primary-active);}
+  .btn-secondary{background:var(--canvas);color:var(--ink);border:1px solid var(--hairline);}
+  .btn-secondary:hover{border-color:var(--muted-soft);}
+  .btn-on-dark{background:var(--surface-dark-elevated);color:var(--on-dark);border:1px solid #3a3834;}
+  .btn-cream-on-coral{background:var(--canvas);color:var(--ink);}
+  .btn-cream-on-coral:hover{background:var(--surface-soft);}
+
+  /* Hero */
+  header.hero{padding:96px 0 88px;}
+  .hero .grid{display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:center;}
+  .hero .kicker{
+    font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--primary);margin-bottom:24px;
+  }
+  .hero h1{
+    font-family:var(--font-display);font-weight:400;color:var(--ink);
+    font-size:60px;line-height:1.1;letter-spacing:-1px;margin-bottom:24px;
+  }
+  .hero h1 em{font-style:normal;color:var(--primary);}
+  .hero p.lead{font-size:19px;color:var(--body-strong);max-width:34em;margin-bottom:32px;}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-card{
+    background:var(--surface-card);border-radius:var(--r-xl);padding:40px;
+    color:var(--ink);
+  }
+  .hero-card .num{font-family:var(--font-display);font-size:52px;font-weight:400;letter-spacing:-1px;color:var(--primary);}
+  .hero-card .lbl{font-size:13px;color:var(--muted);margin-top:4px;}
+  .hero-card .row{display:flex;justify-content:space-between;gap:16px;margin-top:28px;}
+  .hero-card .row .it{flex:1;background:var(--surface-soft);border-radius:var(--r-lg);padding:20px;}
+  .hero-card .row .it .t{font-size:15px;font-weight:500;color:var(--ink);}
+  .hero-card .row .it .d{font-size:13px;color:var(--muted);margin-top:6px;}
+
+  /* Section base */
+  section{padding:96px 0;}
+  .sec-head{margin-bottom:56px;}
+  .sec-head .tag{
+    display:inline-block;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--primary);margin-bottom:16px;
+  }
+  .sec-head h2{
+    font-family:var(--font-display);font-weight:400;color:var(--ink);
+    font-size:44px;line-height:1.12;letter-spacing:-1px;
+  }
+  .sec-head p{color:var(--muted);max-width:40em;margin-top:14px;}
+
+  /* Theme cards */
+  .theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .theme-card{background:var(--surface-card);border-radius:var(--r-lg);padding:32px;}
+  .theme-card .gl{
+    display:flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:var(--r-md);background:var(--canvas);
+    font-family:var(--font-display);font-size:22px;color:var(--primary);
+    border:1px solid var(--hairline-soft);margin-bottom:20px;
+  }
+  .theme-card h3{font-size:18px;font-weight:500;color:var(--ink);margin-bottom:10px;}
+  .theme-card p{font-size:15px;color:var(--muted);}
+
+  /* Departments */
+  .dept-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .dept-card{
+    background:var(--surface-card);border-radius:var(--r-lg);padding:32px;
+    border:1px solid var(--hairline-soft);
+  }
+  .dept-card .name{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  .dept-card .name h3{font-size:18px;font-weight:500;color:var(--ink);}
+  .dept-card .ability{
+    font-size:12px;font-weight:500;letter-spacing:.5px;color:var(--on-primary);
+    background:var(--primary);padding:4px 12px;border-radius:var(--r-pill);
+  }
+  .dept-card p{font-size:15px;color:var(--muted);}
+
+  /* Repos dark cards */
+  .repos-band{background:var(--surface-dark);border-radius:var(--r-xl);padding:64px;}
+  .repos-band .sec-head h2{color:var(--on-dark);}
+  .repos-band .sec-head p{color:var(--on-dark-soft);}
+  .repo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .repo-card{background:var(--surface-dark-elevated);border-radius:var(--r-lg);padding:32px;}
+  .repo-card .code{
+    font-family:ui-monospace,"JetBrains Mono",monospace;font-size:15px;
+    color:var(--primary);margin-bottom:14px;
+  }
+  .repo-card h3{font-size:18px;font-weight:500;color:var(--on-dark);margin-bottom:10px;}
+  .repo-card p{font-size:14px;color:var(--on-dark-soft);}
+
+  /* CTA coral band */
+  .cta{
+    background:var(--primary);border-radius:var(--r-lg);padding:64px;
+    color:var(--on-primary);
+  }
+  .cta h2{font-family:var(--font-display);font-weight:400;font-size:38px;line-height:1.15;letter-spacing:-.5px;margin-bottom:14px;}
+  .cta p{font-size:17px;color:rgba(255,255,255,.9);max-width:34em;margin-bottom:28px;}
+  .cta .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* Footer */
+  footer{background:var(--surface-dark);color:var(--on-dark-soft);padding:64px 0 40px;margin-top:96px;}
+  footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
+  footer h4{color:var(--on-dark);font-size:15px;font-weight:500;margin-bottom:16px;}
+  footer a{color:var(--on-dark-soft);text-decoration:none;display:block;font-size:14px;margin-bottom:10px;}
+  footer a:hover{color:var(--on-dark);}
+  footer .about{font-size:14px;max-width:26em;}
+  footer .bottom{
+    border-top:1px solid #2a2825;margin-top:40px;padding-top:24px;
+    display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:12px;
+  }
+
+  @media(max-width:1024px){
+    .hero .grid{grid-template-columns:1fr;gap:40px;}
+    .hero h1{font-size:44px;}
+    .theme-grid{grid-template-columns:1fr;}
+    .dept-grid,.repo-grid{grid-template-columns:1fr;}
+    footer .cols{grid-template-columns:1fr 1fr;gap:32px;}
+  }
+  @media(max-width:768px){
+    .nav-links{display:none;}
+    .hero{padding:64px 0;}
+    .hero h1{font-size:34px;letter-spacing:0;}
+    .sec-head h2{font-size:32px;}
+    .repos-band{padding:40px 24px;}
+    .cta{padding:48px 24px;}
+    footer{padding-top:48px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top nav -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">
+      <span class="mark">H</span><b>HITech-AI</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#theme">主题</a></li>
+      <li><a href="#departments">部门</a></li>
+      <li><a href="#repos">仓库</a></li>
+      <li><a href="#join">加入</a></li>
+      <li><a class="btn btn-primary" href="#join">加入社团</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="kicker">智启新航 · AI 研学社</div>
+      <h1>以 AI 启航，<br>向<em>新知</em>远行</h1>
+      <p class="lead">以朋辈互助与 AI 研学为核心，帮助每一位成员正确认识、合理使用人工智能，共同探索 AI 时代下的成长方向。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#join">加入我们</a>
+        <a class="btn btn-secondary" href="#departments">了解部门</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div style="font-family:var(--font-display);font-size:26px;color:var(--ink);margin-bottom:8px;">HITech-AI</div>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:24px;">开源组织 · 学习社区 · 项目工坊</p>
+      <div class="num">3</div>
+      <div class="lbl">当前仓库 · docs / projects / 主页</div>
+      <div class="row">
+        <div class="it"><div class="t">4 部门</div><div class="d">实践 · 宣传 · 研讨 · 技术</div></div>
+        <div class="it"><div class="t">朋辈互助</div><div class="d">以 AI 为帆，人人启航</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Theme -->
+<section id="theme">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">主题内涵</div>
+      <h2>"智启新航"</h2>
+      <p>以智能科技（AI）启迪智慧，开启学习与成长的新航程。</p>
+    </div>
+    <div class="theme-grid">
+      <div class="theme-card"><div class="gl">智</div><h3>智 · 启迪</h3><p>以 AI 智能为依托，启迪智慧，激发创新思维。</p></div>
+      <div class="theme-card"><div class="gl">启</div><h3>启 · 开启</h3><p>开启、启发，推动迈出 AI 学习与实践的第一步。</p></div>
+      <div class="theme-card"><div class="gl">新航</div><h3>新航 · 远行</h3><p>新征程、新起点，驶向新知与未来的彼岸。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Departments -->
+<section id="departments" style="background:var(--surface-soft);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">部门架构</div>
+      <h2>四大部门，协同启航</h2>
+      <p>以朋辈互助为纽带，四个部门各司其职，共同构建完整的 AI 学习与成长生态。</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card"><div class="name"><h3>实践部</h3><span class="ability">增强规划力</span></div><p>对外交流、实践活动、校企研学，让理论走向真实场景。</p></div>
+      <div class="dept-card"><div class="name"><h3>宣传部</h3><span class="ability">增强吸引力</span></div><p>活动宣传、文案编辑、海报设计、新媒体运营，讲好社团故事。</p></div>
+      <div class="dept-card"><div class="name"><h3>研讨部</h3><span class="ability">增强信息力</span></div><p>主题调研、读书分享、圆桌讨论、资料整理，沉淀深度认知。</p></div>
+      <div class="dept-card"><div class="name"><h3>技术部</h3><span class="ability">增强工程力</span></div><p>AI 原理科普、AI 工具教学、企业 AI 应用解析，为社员赋能。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Repos -->
+<section id="repos">
+  <div class="wrap">
+    <div class="repos-band">
+      <div class="sec-head">
+        <div class="tag">开源组织</div>
+        <h2>我们的仓库</h2>
+        <p>HITech-AI 是社团的 GitHub 开源组织，以开源协作沉淀学习与项目成果。</p>
+      </div>
+      <div class="repo-grid">
+        <div class="repo-card"><div class="code">HITech-AI/docs</div><h3>文档库</h3><p>沉淀技术科普、教学资料与活动归档，是社团的知识库。</p></div>
+        <div class="repo-card"><div class="code">HITech-AI/projects</div><h3>项目库</h3><p>承载黑客松、竞赛与社团项目，用文件夹组织，不拆散仓库。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="join" class="wrap">
+  <div class="cta">
+    <h2>加入我们，一起启航</h2>
+    <p>无论是否具备技术基础，只要愿意主动学习、乐于交流，都能在这里找到适合自己的方向。</p>
+    <div class="btn-row">
+      <a class="btn btn-cream-on-coral" href="https://github.com/HITech-AI" target="_blank">访问 GitHub 组织</a>
+      <a class="btn btn-cream-on-coral" href="#">联系我们</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="color:var(--on-dark);"><span class="mark">H</span><b>HITech-AI</b></div>
+        <p class="about" style="margin-top:16px;">"智启新航"AI 研学社 · 以朋辈互助与 AI 研学为核心，共同探索 AI 时代下的成长方向。</p>
+      </div>
+      <div><h4>导航</h4><a href="#theme">主题</a><a href="#departments">部门</a><a href="#repos">仓库</a><a href="#join">加入</a></div>
+      <div><h4>仓库</h4><a href="https://github.com/HITech-AI/docs" target="_blank">docs</a><a href="https://github.com/HITech-AI/projects" target="_blank">projects</a></div>
+      <div><h4>联系</h4><a href="#">加入社团</a><a href="https://github.com/HITech-AI" target="_blank">GitHub</a></div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 HITech-AI · "智启新航"AI 研学社</span>
+      <span>MIT License</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
