@@ -14,6 +14,7 @@ HITech-AI 是"智启新航"AI 研学社的 GitHub 开源组织。社团以**朋�
 |---|---|
 | 想了解社团主题与四部门 | 见下方「主题内涵」「四部门」 |
 | 想学习 AI、找学习路线与资料 | 前往 [`docs`](https://github.com/HITech-AI/docs) 文档库 |
+| 想了解社团门面项目 | 前往 [`HIT-CampusAI`](https://github.com/HITech-AI/HIT-CampusAI) 校园 AI 助手 |
 | 想参与或发起社团项目 | 前往 [`projects`](https://github.com/HITech-AI/projects) 项目库 |
 | 想提交建议、参与贡献 | 阅读 [CONTRIBUTING](CONTRIBUTING.md) 后提 issue / PR |
 | 想加入社团 | 联系部门负责人（见文末） |
@@ -42,6 +43,7 @@ HITech-AI 是"智启新航"AI 研学社的 GitHub 开源组织。社团以**朋�
 | 仓库 | 用途 |
 |------|------|
 | `HITech-AI` | 组织主页（本仓库） |
+| [`HIT-CampusAI`](https://github.com/HITech-AI/HIT-CampusAI) | 门面项目：哈工大（深圳）校园 AI 生活助手 |
 | [`docs`](https://github.com/HITech-AI/docs) | 文档库：科普、教学、活动归档、部门资料 |
 | [`projects`](https://github.com/HITech-AI/projects) | 项目库：黑客松、竞赛、社团项目与内部工具 |
 
