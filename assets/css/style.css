@@ -287,6 +287,31 @@ footer .bottom{
 .toc a{color:var(--body-strong);text-decoration:none;}
 .toc a:hover{color:var(--primary);}
 
+/* 相关栏目链接区 */
+.related{
+  margin:28px 0 0;
+  padding-top:20px;
+  border-top:1px solid var(--hairline-soft);
+}
+.related ul{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.related li{margin:0;}
+.related a{
+  display:block;padding:12px 16px;
+  background:var(--surface-card);border:1px solid var(--hairline-soft);
+  border-radius:var(--r-md);text-decoration:none;color:inherit;
+  font-size:14px;line-height:1.5;
+  transition:border-color .12s,background .12s;
+}
+.related a:hover{border-color:var(--primary);background:var(--surface-soft);}
+.related a .rel-title{font-weight:600;color:var(--ink);}
+.related a .rel-desc{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;}
+@media(max-width:640px){
+  .related ul{grid-template-columns:1fr;}
+}
+
 /* ---------- Responsive ---------- */
 @media(max-width:1024px){
   .hero .grid{grid-template-columns:1fr;gap:40px;}
