@@ -302,7 +302,7 @@ footer .bottom{
 }
 
 /* ============================================================
-   主题切换系统
+   主题系统：风格预设 + 配色
    ============================================================ */
 .theme-switcher{
   position:relative;display:inline-flex;align-items:center;
@@ -317,17 +317,20 @@ footer .bottom{
 .theme-dot:hover{transform:scale(1.1);border-color:var(--primary-active);}
 .theme-panel{
   display:none;position:absolute;top:calc(100% + 10px);right:0;
-  background:#fff;border:1px solid var(--hairline);
-  border-radius:var(--r-lg);padding:14px;
-  box-shadow:0 8px 30px rgba(0,0,0,.12);
-  z-index:100;min-width:160px;
+  background:var(--surface-card);border:1px solid var(--hairline);
+  border-radius:var(--r-lg);padding:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,.15);
+  z-index:100;min-width:220px;
 }
 .theme-panel.open{display:block;}
 .theme-panel .tp-label{
   font-size:11px;font-weight:500;letter-spacing:.8px;
   text-transform:uppercase;color:var(--muted);margin-bottom:10px;
 }
-.theme-panel .tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.theme-panel .tp-section{margin-bottom:16px;}
+.theme-panel .tp-section:last-child{margin-bottom:0;}
+.theme-panel .tp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.theme-panel .tp-grid.colors{grid-template-columns:repeat(4,1fr);}
 .theme-panel .tp-item{
   display:flex;flex-direction:column;align-items:center;gap:4px;
   padding:8px 4px;border-radius:var(--r-md);cursor:pointer;
@@ -342,8 +345,90 @@ footer .bottom{
 .theme-panel .tp-item .tp-name{
   font-size:11px;color:var(--muted);white-space:nowrap;
 }
+.theme-panel .tp-item .tp-preview{
+  width:100%;height:36px;border-radius:var(--r-sm);
+  border:1px solid var(--hairline-soft);margin-bottom:4px;
+}
+.theme-panel .tp-divider{
+  border-top:1px solid var(--hairline-soft);margin:12px 0;
+}
 
-/* 主题色变量覆盖 */
+/* ---- 风格预设 ---- */
+
+/* 瑞士极简风：纯白、无衬线、锐角、紧网格 */
+[data-style="swiss"]{
+  --canvas:#ffffff;
+  --surface-soft:#f4f4f3;
+  --surface-card:#fafafa;
+  --surface-cream-strong:#eeeeec;
+  --surface-dark:#111113;
+  --surface-dark-elevated:#1f1f23;
+  --surface-dark-soft:#18181b;
+  --ink:#111113;
+  --body:#3f3f46;
+  --body-strong:#18181b;
+  --muted:#71717a;
+  --muted-soft:#a1a1aa;
+  --hairline:#e4e4e7;
+  --hairline-soft:#f4f4f5;
+  --placeholder-bg:#fafafa;
+  --placeholder-line:#d4d4d8;
+  --placeholder-ink:#52525b;
+  --font-display:"Inter","Source Han Sans SC","Noto Sans SC",system-ui,sans-serif;
+  --r-xs:2px;--r-sm:3px;--r-md:4px;--r-lg:6px;--r-xl:8px;
+}
+
+/* 终端极客风：深色、等宽字体、绿/琥珀色 */
+[data-style="terminal"]{
+  --canvas:#0d1117;
+  --surface-soft:#161b22;
+  --surface-card:#1c2128;
+  --surface-cream-strong:#21262d;
+  --surface-dark:#010409;
+  --surface-dark-elevated:#161b22;
+  --surface-dark-soft:#0d1117;
+  --ink:#e6edf3;
+  --body:#9198a1;
+  --body-strong:#c9d1d9;
+  --muted:#6e7681;
+  --muted-soft:#484f58;
+  --hairline:#30363d;
+  --hairline-soft:#21262d;
+  --on-primary:#0d1117;
+  --on-dark:#e6edf3;
+  --on-dark-soft:#7d8590;
+  --placeholder-bg:#161b22;
+  --placeholder-line:#30363d;
+  --placeholder-ink:#8b949e;
+  --font-display:"JetBrains Mono","Fira Code",ui-monospace,"SF Mono",monospace;
+  --font-body:"JetBrains Mono","Fira Code",ui-monospace,"SF Mono",monospace;
+  --r-xs:0px;--r-sm:2px;--r-md:3px;--r-lg:4px;--r-xl:6px;
+}
+
+/* 暗黑模式：莫兰迪底色调暗 */
+[data-style="dark"]{
+  --canvas:#181715;
+  --surface-soft:#1f1e1b;
+  --surface-card:#252320;
+  --surface-cream-strong:#2a2825;
+  --surface-dark:#0e0d0c;
+  --surface-dark-elevated:#1a1917;
+  --surface-dark-soft:#141311;
+  --ink:#f5f3ee;
+  --body:#b8b5ae;
+  --body-strong:#e0ddd6;
+  --muted:#8e8b82;
+  --muted-soft:#6e6b64;
+  --hairline:#3a3834;
+  --hairline-soft:#2a2825;
+  --on-dark:#f5f3ee;
+  --on-dark-soft:#8e8b82;
+  --placeholder-bg:#2a2825;
+  --placeholder-line:#4a4844;
+  --placeholder-ink:#b8b5ae;
+}
+
+/* ---- 配色变量覆盖（在所有风格下生效） ---- */
 [data-theme="dai-blue"]{
   --primary:#4a6fa5;--primary-active:#3a5a8a;
   --placeholder-bg:#eef2f8;--placeholder-line:#b8c8e0;--placeholder-ink:#3a5a8a;
@@ -367,4 +452,28 @@ footer .bottom{
 [data-theme="anber-amber"]{
   --primary:#c48a3a;--primary-active:#a57028;
   --placeholder-bg:#fdf6ec;--placeholder-line:#e8d0a8;--placeholder-ink:#a57028;
+}
+
+/* 终端风格默认配色改为绿色，覆盖上面的默认 */
+[data-style="terminal"][data-theme=""],
+[data-style="terminal"]:not([data-theme]){
+  --primary:#3fb950;--primary-active:#2ea043;
+}
+[data-style="terminal"][data-theme="dai-blue"]{
+  --primary:#58a6ff;--primary-active:#3b82f6;
+}
+[data-style="terminal"][data-theme="tao-pink"]{
+  --primary:#f778ba;--primary-active:#db61a2;
+}
+[data-style="terminal"][data-theme="qing-sky"]{
+  --primary:#39d2c0;--primary-active:#2bb0a0;
+}
+[data-style="terminal"][data-theme="zhu-green"]{
+  --primary:#3fb950;--primary-active:#2ea043;
+}
+[data-style="terminal"][data-theme="qing-lotus"]{
+  --primary:#bc8cff;--primary-active:#9d6bd9;
+}
+[data-style="terminal"][data-theme="anber-amber"]{
+  --primary:#d29922;--primary-active:#bb8018;
 }
