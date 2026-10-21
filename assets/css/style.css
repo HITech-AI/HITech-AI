@@ -300,3 +300,71 @@ footer .bottom{
   .cta{padding:48px 24px;}
   footer{padding-top:48px;}
 }
+
+/* ============================================================
+   主题切换系统
+   ============================================================ */
+.theme-switcher{
+  position:relative;display:inline-flex;align-items:center;
+}
+.theme-dot{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--primary);cursor:pointer;
+  border:2px solid var(--hairline);
+  transition:transform .15s ease,border-color .15s ease;
+  flex-shrink:0;
+}
+.theme-dot:hover{transform:scale(1.1);border-color:var(--primary-active);}
+.theme-panel{
+  display:none;position:absolute;top:calc(100% + 10px);right:0;
+  background:#fff;border:1px solid var(--hairline);
+  border-radius:var(--r-lg);padding:14px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+  z-index:100;min-width:160px;
+}
+.theme-panel.open{display:block;}
+.theme-panel .tp-label{
+  font-size:11px;font-weight:500;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px;
+}
+.theme-panel .tp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.theme-panel .tp-item{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:8px 4px;border-radius:var(--r-md);cursor:pointer;
+  transition:background .12s ease;
+}
+.theme-panel .tp-item:hover{background:var(--surface-soft);}
+.theme-panel .tp-item .tp-swatch{
+  width:22px;height:22px;border-radius:50%;
+  border:2px solid transparent;
+}
+.theme-panel .tp-item.active .tp-swatch{border-color:var(--ink);}
+.theme-panel .tp-item .tp-name{
+  font-size:11px;color:var(--muted);white-space:nowrap;
+}
+
+/* 主题色变量覆盖 */
+[data-theme="dai-blue"]{
+  --primary:#4a6fa5;--primary-active:#3a5a8a;
+  --placeholder-bg:#eef2f8;--placeholder-line:#b8c8e0;--placeholder-ink:#3a5a8a;
+}
+[data-theme="tao-pink"]{
+  --primary:#d4728a;--primary-active:#b85a72;
+  --placeholder-bg:#fdf0f3;--placeholder-line:#ecc0cd;--placeholder-ink:#b85a72;
+}
+[data-theme="qing-sky"]{
+  --primary:#5a9eb5;--primary-active:#4a8598;
+  --placeholder-bg:#eef7f9;--placeholder-line:#b8d8e0;--placeholder-ink:#4a8598;
+}
+[data-theme="zhu-green"]{
+  --primary:#6b9e6b;--primary-active:#558055;
+  --placeholder-bg:#f0f6f0;--placeholder-line:#c0dcc0;--placeholder-ink:#558055;
+}
+[data-theme="qing-lotus"]{
+  --primary:#8b6fb5;--primary-active:#735a9a;
+  --placeholder-bg:#f4f0f8;--placeholder-line:#d0c0e0;--placeholder-ink:#735a9a;
+}
+[data-theme="anber-amber"]{
+  --primary:#c48a3a;--primary-active:#a57028;
+  --placeholder-bg:#fdf6ec;--placeholder-line:#e8d0a8;--placeholder-ink:#a57028;
+}
