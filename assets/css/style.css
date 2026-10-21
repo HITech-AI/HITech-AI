@@ -213,7 +213,7 @@ footer .bottom{
 }
 
 /* 正文容器 */
-.content{max-width:880px;margin:0 auto;padding:64px 0 96px;}
+.content{max-width:880px;margin:0 auto;padding:64px 24px 96px;}
 .content h2{
   font-family:var(--font-display);font-weight:400;color:var(--ink);
   font-size:30px;line-height:1.2;letter-spacing:-.5px;
