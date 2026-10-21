@@ -428,6 +428,156 @@ footer .bottom{
   --placeholder-ink:#b8b5ae;
 }
 
+/* 复古印刷风：暖纸色、粗衬线、直角边框 */
+[data-style="retro"]{
+  --canvas:#f4ecd8;
+  --surface-soft:#ede4cc;
+  --surface-card:#e8ddc0;
+  --surface-cream-strong:#e0d4b0;
+  --surface-dark:#2a2015;
+  --surface-dark-elevated:#3a2e1e;
+  --surface-dark-soft:#322818;
+  --ink:#1a1408;
+  --body:#4a3f2e;
+  --body-strong:#2a2015;
+  --muted:#7a6e58;
+  --muted-soft:#9a8e78;
+  --hairline:#c8b890;
+  --hairline-soft:#d8c8a0;
+  --on-dark:#f4ecd8;
+  --on-dark-soft:#9a8e78;
+  --placeholder-bg:#ede4cc;
+  --placeholder-line:#c8b890;
+  --placeholder-ink:#6a5e48;
+  --font-display:"Playfair Display","Source Han Serif SC","Noto Serif SC",serif;
+  --r-xs:0px;--r-sm:0px;--r-md:0px;--r-lg:0px;--r-xl:2px;
+}
+
+/* 玻璃拟态风：深色渐变底、半透明毛玻璃卡片 */
+[data-style="glass"]{
+  --canvas:#1a1a2e;
+  --surface-soft:rgba(255,255,255,.08);
+  --surface-card:rgba(255,255,255,.1);
+  --surface-cream-strong:rgba(255,255,255,.15);
+  --surface-dark:#0f0f1e;
+  --surface-dark-elevated:rgba(255,255,255,.1);
+  --surface-dark-soft:rgba(255,255,255,.06);
+  --ink:#f0f0f8;
+  --body:#c8c8e0;
+  --body-strong:#e8e8f5;
+  --muted:#9999bb;
+  --muted-soft:#777799;
+  --hairline:rgba(255,255,255,.15);
+  --hairline-soft:rgba(255,255,255,.1);
+  --on-dark:#f0f0f8;
+  --on-dark-soft:#9999bb;
+  --placeholder-bg:rgba(255,255,255,.06);
+  --placeholder-line:rgba(255,255,255,.2);
+  --placeholder-ink:#c0c0e0;
+}
+[data-style="glass"] body{
+  background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
+  background-attachment:fixed;
+}
+[data-style="glass"] .hero-card,
+[data-style="glass"] .theme-card,
+[data-style="glass"] .dept-card,
+[data-style="glass"] .cards .card,
+[data-style="glass"] .repo-card,
+[data-style="glass"] .toc,
+[data-style="glass"] .callout{
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.12);
+}
+[data-style="glass"] nav{
+  background:rgba(26,26,46,.7);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+[data-style="glass"] .page-head{
+  background:rgba(255,255,255,.04);
+}
+
+/* 新拟态风：浅色底、柔和凸起阴影 */
+[data-style="neu"]{
+  --canvas:#e0e5ec;
+  --surface-soft:#e0e5ec;
+  --surface-card:#e0e5ec;
+  --surface-cream-strong:#d6dce5;
+  --surface-dark:#2a2d3a;
+  --surface-dark-elevated:#3a3d4a;
+  --surface-dark-soft:#32353f;
+  --ink:#2a2d3a;
+  --body:#4a4d5a;
+  --body-strong:#2a2d3a;
+  --muted:#7a7d8a;
+  --muted-soft:#9a9daa;
+  --hairline:#d0d5de;
+  --hairline-soft:#d8dde5;
+  --on-dark:#e0e5ec;
+  --on-dark-soft:#8a8d9a;
+  --placeholder-bg:#d6dce5;
+  --placeholder-line:#c0c5ce;
+  --placeholder-ink:#5a5d6a;
+  --r-xs:8px;--r-sm:10px;--r-md:14px;--r-lg:18px;--r-xl:24px;
+}
+[data-style="neu"] .hero-card,
+[data-style="neu"] .theme-card,
+[data-style="neu"] .dept-card,
+[data-style="neu"] .cards .card,
+[data-style="neu"] .toc,
+[data-style="neu"] .callout{
+  background:#e0e5ec;
+  box-shadow:8px 8px 16px #b8bdc6, -8px -8px 16px #ffffff;
+  border:none;
+}
+[data-style="neu"] .hero-card .row .it{
+  background:#e0e5ec;
+  box-shadow:inset 4px 4px 8px #b8bdc6, inset -4px -4px 8px #ffffff;
+}
+[data-style="neu"] nav{
+  background:#e0e5ec;
+  border-bottom:none;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+[data-style="neu"] .page-head{
+  background:#e0e5ec;
+  border-bottom:none;
+}
+[data-style="neu"] .status-badge{
+  background:#e0e5ec;
+  box-shadow:inset 2px 2px 4px #b8bdc6, inset -2px -2px 4px #ffffff;
+  border:none;
+}
+
+/* 等宽文档风：浅色底、全站 monospace、类似技术文档站 */
+[data-style="mono"]{
+  --canvas:#fafaf8;
+  --surface-soft:#f0f0ec;
+  --surface-card:#f5f5f0;
+  --surface-cream-strong:#eaeae0;
+  --surface-dark:#1e1e1e;
+  --surface-dark-elevated:#2d2d2d;
+  --surface-dark-soft:#252525;
+  --ink:#1a1a1a;
+  --body:#3a3a3a;
+  --body-strong:#1a1a1a;
+  --muted:#7a7a7a;
+  --muted-soft:#9a9a9a;
+  --hairline:#e0e0d8;
+  --hairline-soft:#ecece4;
+  --on-dark:#fafaf8;
+  --on-dark-soft:#9a9a9a;
+  --placeholder-bg:#f0f0ec;
+  --placeholder-line:#d0d0c8;
+  --placeholder-ink:#5a5a5a;
+  --font-display:"JetBrains Mono","Fira Code",ui-monospace,"SF Mono","Source Han Sans SC",monospace;
+  --font-body:"JetBrains Mono","Fira Code",ui-monospace,"SF Mono","Source Han Sans SC",monospace;
+  --r-xs:0px;--r-sm:0px;--r-md:2px;--r-lg:4px;--r-xl:6px;
+}
+
 /* ---- 配色变量覆盖（在所有风格下生效） ---- */
 [data-theme="dai-blue"]{
   --primary:#4a6fa5;--primary-active:#3a5a8a;

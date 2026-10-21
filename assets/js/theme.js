@@ -4,7 +4,11 @@
     { id: '',         name: '莫兰迪', preview: 'linear-gradient(135deg,#faf9f5 60%,#cc785c 60%)' },
     { id: 'swiss',    name: '瑞士极简', preview: 'linear-gradient(135deg,#ffffff 60%,#111 60%)' },
     { id: 'terminal', name: '终端极客', preview: 'linear-gradient(135deg,#0d1117 60%,#3fb950 60%)' },
-    { id: 'dark',     name: '暗黑模式', preview: 'linear-gradient(135deg,#181715 60%,#cc785c 60%)' }
+    { id: 'dark',     name: '暗黑模式', preview: 'linear-gradient(135deg,#181715 60%,#cc785c 60%)' },
+    { id: 'retro',    name: '复古印刷', preview: 'linear-gradient(135deg,#f4ecd8 60%,#8b4513 60%)' },
+    { id: 'glass',    name: '玻璃拟态', preview: 'linear-gradient(135deg,#1a1a2e 60%,#6c63ff 60%)' },
+    { id: 'neu',      name: '新拟态', preview: 'linear-gradient(135deg,#e0e5ec 60%,#8a9ab0 60%)' },
+    { id: 'mono',     name: '等宽文档', preview: 'linear-gradient(135deg,#fafaf8 60%,#2a2a2a 60%)' }
   ];
 
   var COLORS = [
