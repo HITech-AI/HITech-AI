@@ -33,7 +33,7 @@
     <div class="kicker">推进研究 · 协作与合作</div>
     <h1>协作与合作</h1>
     <p class="lead">找老师、联系学长、找搭子组队，以及参与社团 GitHub 开源组织的协作——这里讲清楚怎么"一起做事"。</p>
-    <span class="status-badge">骨架待补充 · 正文由社团成员撰写</span>
+    <span class="status-badge">持续更新 · 社团成员共同撰写</span>
   </div>
 </div>
 
@@ -42,9 +42,10 @@
     <div class="toc-title">本页目录</div>
     <ol>
       <li><a href="#git">先学会 GitHub 协作</a></li>
-      <li><a href="#open">参与开源贡献</a></li>
+      <li><a href="#open">参与开源贡献流程</a></li>
       <li><a href="#people">联系老师、学长与合作</a></li>
       <li><a href="#teams">在社团内找搭子组队</a></li>
+      <li><a href="#external">外部组织合作模式</a></li>
       <li><a href="#related">相关栏目</a></li>
     </ol>
   </div>
@@ -52,36 +53,82 @@
   <h2 id="git">先学会 GitHub 协作</h2>
   <div class="callout">GitHub 是社团开源协作的底座。第一场社团活动就是《GitHub 与 AI Agent 入门》，从这里起步，后续协作就有了共同语言。</div>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】GitHub 入门要点</div>
-    <p>建议给出：注册与登录、搜索项目、读 README、找 Releases；进阶的 Markdown、Issue、Pull Request 与基本分支操作。</p>
-    <p>可链接到社团 <a href="https://github.com/HITech-AI/docs" target="_blank">docs 文档库</a> 里的教学资料。</p>
+  <h3>新手必学的 GitHub 操作</h3>
+  <ul>
+    <li><strong>注册与登录</strong>：到 <a href="https://github.com" target="_blank">github.com</a> 注册，昵称建议用真名或常用 ID。</li>
+    <li><strong>搜索项目</strong>：在搜索框输入关键词，按 Stars 排序找热门项目。学会读 README——它是项目的说明书。</li>
+    <li><strong>找 Releases</strong>：项目的正式发布版本在 Releases 页面下载，不要直接下载源码压缩包。</li>
+    <li><strong>基本操作</strong>：创建仓库（New Repository）、提交（commit）、推送（push）。这些在首场活动会手把手教。</li>
+    <li><strong>进阶</strong>：Markdown 写作、提 Issue（报问题/提建议）、发起 Pull Request（PR，给别人的项目贡献代码）、分支管理。</li>
+  </ul>
+
+  <div class="callout cream">
+    <strong>AI Agent 是你的 GitHub 助手：</strong>注册时不知道怎么填资料？让 AI 帮你写；写 commit 说明不知道怎么措辞？让 AI 帮你写规范提交信息；push 报错了？把错误信息贴给 AI，它会帮你定位原因。这是社团首场活动的核心思路。
   </div>
 
-  <h2 id="open">参与开源贡献</h2>
+  <h2 id="open">参与开源贡献流程</h2>
   <p>HITech-AI 是社团的 GitHub 开源组织，以 <code>docs</code>（文档库）与 <code>projects</code>（项目库）沉淀学习与项目成果。遵循"仓库固定、目录扩展"原则。</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】参与开源流程</div>
-    <p>写明：Fork → 新建分支 → 提交改动 → Pull Request 的基本流程；Conventional Commits 提交规范；哪些内容适合贡献（补充文档、修正链接、提 issue、参与项目开发）。</p>
-    <p>见仓库 <a href="https://github.com/HITech-AI/HITech-AI" target="_blank">CONTRIBUTING</a> 与 <a href="https://github.com/HITech-AI/HITech-AI" target="_blank">CODE_OF_CONDUCT</a>。</p>
-  </div>
+  <h3>Fork → PR 协作流程</h3>
+  <ol>
+    <li><strong>Fork</strong>：在 GitHub 上找到 <a href="https://github.com/HITech-AI" target="_blank">HITech-AI 组织</a>下的目标仓库，点击 "Fork" 把它复制到你自己的账号下。</li>
+    <li><strong>克隆到本地</strong>：把你 Fork 的仓库 clone 到电脑上，新建一个分支（如 <code>add-xxx</code>），在分支上修改。</li>
+    <li><strong>提交改动</strong>：写完修改后 commit 并 push 到你自己的 Fork 仓库。提交信息建议用 Conventional Commits 格式（如 <code>docs: add resource card for Python</code>）。</li>
+    <li><strong>发起 Pull Request</strong>：在 GitHub 上点击 "New Pull Request"，选择你的分支 → 社团仓库主分支。写清楚你改了什么、为什么改。</li>
+    <li><strong>Review 与合并</strong>：社团维护者会 review 你的 PR，提出修改意见（如有），你修改后再次提交。通过后合并到主仓库。</li>
+  </ol>
+
+  <h3>哪些内容适合贡献</h3>
+  <ul>
+    <li><strong>补充文档</strong>：在 docs 仓库里添加一篇学习笔记、一张资源卡、一份活动记录。</li>
+    <li><strong>修正链接</strong>：发现页面上的链接打不开、或指向过时内容，直接提 PR 修正。</li>
+    <li><strong>提 Issue</strong>：发现问题或有新想法，先开一个 Issue 讨论，不要直接改代码。</li>
+    <li><strong>参与项目开发</strong>：在 projects 仓库中认领 Issue，参与 HIT-CampusAI 等项目的开发。</li>
+  </ul>
 
   <h2 id="people">联系老师、学长与合作</h2>
-  <div class="placeholder">
-    <div class="ph-title">【待补充】联系方法</div>
-    <p>建议给出：</p>
-    <ul>
-      <li>怎么联系老师：看学院主页 / 课题组介绍、准备一份简短的自我介绍、说明想参与什么。</li>
-      <li>怎么找学长：通过部门活动、研讨部调研、社团答疑群对接。</li>
-      <li>对外合作：实践部对接企业（如 Datawhale、百度飞桨）与开源社区，把合作机会沉淀在这里。</li>
-    </ul>
-  </div>
+
+  <h3>怎么联系老师 / 课题组</h3>
+  <ul>
+    <li><strong>先做功课</strong>：看学院主页和教师介绍，了解老师的研究方向和近期发表，不要海投邮件。</li>
+    <li><strong>准备简短自我介绍</strong>：姓名、年级、专业、目前在学什么、对老师哪个方向感兴趣、想参与什么（不要超过 200 字）。</li>
+    <li><strong>说明来意</strong>：是想旁听组会、申请本科生科研、还是只是请教方向？说清楚你想要什么。</li>
+    <li><strong>通过社团渠道</strong>：实践部负责对外联系和校企对接，社团可以以组织名义帮你牵线，比个人单打独斗更有效。</li>
+  </ul>
+
+  <h3>怎么找学长</h3>
+  <ul>
+    <li><strong>部门活动</strong>：技术部的双周技术分享和 Agent 训练营里，带活动的骨干就是学长。</li>
+    <li><strong>研讨部</strong>：研讨部的议题讨论中，主持和实证演示人都是有相关经验的学长，可以直接交流。</li>
+    <li><strong>社团答疑群</strong>：在群里直接提问，学长和骨干会回复。问问题时尽量把上下文说清楚（你在做什么、卡在哪、试过什么）。</li>
+  </ul>
 
   <h2 id="teams">在社团内找搭子组队</h2>
-  <div class="placeholder">
-    <div class="ph-title">【待补充】组队方式</div>
-    <p>建议写明：如何在学习路线里找同方向搭子；如何加入或发起一个 <a href="https://github.com/HITech-AI/projects" target="_blank">projects 项目</a>；黑客松与竞赛的组队入口。</p>
+  <ul>
+    <li><strong>按学习路线组队</strong>：在 <a href="learning.html">学习路线</a>里选同一条路线的人，天然有共同进度。在群里说一声"我在走 XX 路线第 X 周，找搭子"。</li>
+    <li><strong>加入或发起项目</strong>：在 <a href="https://github.com/HITech-AI/projects" target="_blank">projects 项目库</a>里看有哪些项目正在招人，或自己发起一个项目提案。</li>
+    <li><strong>黑客松与竞赛</strong>：学期末内部黑客松是最好的组队机会——现场临时组队，48 小时内做一个作品。外部比赛由实践部核实通知后组织报名。</li>
+  </ul>
+
+  <h2 id="external">外部组织合作模式</h2>
+  <p>社团与外部组织的合作由实践部牵头对接，技术部准备内容和代表作品，具体模式如下：</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="badge">合作方</span>
+      <div class="t">Datawhale · AI+X 高校行</div>
+      <div class="d"><strong>合作内容：</strong>Datawhale 提供教程、SOP、物料和嘉宾支持；社团提供场地、组织人员和本地宣传。我们已对接并进入发起者群，首期落地《AI 新手村》高校行活动。<br><strong>社员收获：</strong>免费参加 AI 入门实践活动、获得 Datawhale 证书、可免费学习 36 门 AI 入门课。</div>
+    </div>
+    <div class="card">
+      <span class="badge">合作方</span>
+      <div class="t">企业开源组织（如百度飞桨领航团）</div>
+      <div class="d"><strong>合作内容：</strong>借助企业开源组织的免费课程、技术专家和硬件资源联合开展活动。从分享与项目点评开始积累支持。<br><strong>社员收获：</strong>接触企业工程师、获得官方课程资源、有机会参加企业活动和比赛。</div>
+    </div>
+    <div class="card">
+      <span class="badge">合作方</span>
+      <div class="t">开源社区（GitHub / Hugging Face 等）</div>
+      <div class="d"><strong>合作内容：</strong>以社团开源组织 HITech-AI 为载体，参与开源社区的贡献活动。我们的项目（HIT-CampusAI 等）开源在 GitHub 上，接受外部贡献。<br><strong>社员收获：</strong>获得真实的开源协作经验、积累 GitHub 贡献记录、为简历加分。</div>
+    </div>
   </div>
 
   <h2 id="related">相关栏目</h2>
@@ -89,6 +136,7 @@
     <li><a href="community.html">社区与动态</a> —— 活动与竞赛信息</li>
     <li><a href="getting-started.html">入门指南</a> —— 加入社团与参与方式</li>
     <li><a href="resources.html">资料总索引</a> —— 协作工具类资源</li>
+    <li><a href="departments/practice.html">实践部</a> —— 对外联系与校企对接</li>
   </ul>
 </div>
 

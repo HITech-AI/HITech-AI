@@ -33,7 +33,7 @@
     <div class="kicker">速查</div>
     <h1>术语与会议速查</h1>
     <p class="lead">读文章、听分享时碰到不熟悉的 AI 术语或学术会议？在这里按拼音 / 英文 / 缩写快速查到解释。</p>
-    <span class="status-badge">骨架待补充 · 词条由社团成员持续维护</span>
+    <span class="status-badge">持续更新 · 社团成员共同维护</span>
   </div>
 </div>
 
@@ -49,30 +49,83 @@
   </div>
 
   <h2 id="terms">术语速查</h2>
-  <p>按方向整理术语，中英文与缩写都能查。每个词条建议格式：<strong>缩写 / 全称 / 一句话解释</strong>。</p>
+  <p>按方向分组整理，中英文与缩写都能查。每个词条：<strong>缩写 / 全称 / 一句话解释</strong>。</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】术语词条</div>
-    <p>建议按方向分表维护，例如：</p>
-    <ul>
-      <li><strong>模型与架构</strong>：Transformer、LLM / 大语言模型、RAG、Agent、Prompt、Token、微调（Fine-tune）等。</li>
-      <li><strong>学习范式</strong>：监督 / 无监督 / 强化学习、预训练、SFT、RLHF 等。</li>
-      <li><strong>工程与协作</strong>：GitHub、Markdown、Docker、Skill、API、vibe coding 等。</li>
-    </ul>
-    <p>可参考 <a href="https://github.com/Takamatsu-Hikaru/AI-Research-Guide" target="_blank">高校 AI 社团的术语速查</a> 的组织方式。</p>
-  </div>
+  <h3>模型与架构</h3>
+  <table class="table">
+    <thead>
+      <tr><th>缩写 / 英文</th><th>中文</th><th>一句话解释</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>LLM</td><td>大语言模型</td><td>Large Language Model——基于海量文本训练的、能理解和生成语言的大模型，如 GPT、Llama、Qwen。</td></tr>
+      <tr><td>Transformer</td><td>Transformer 架构</td><td>当前几乎所有大模型的基础架构，核心是"自注意力机制"，让模型能同时关注输入中所有词的关系。</td></tr>
+      <tr><td>Token</td><td>词元 / 令牌</td><td>模型处理文本的最小单位。一个汉字大约是 1–2 个 token，模型按 token 计费和计算上下文长度。</td></tr>
+      <tr><td>Embedding</td><td>嵌入 / 向量表示</td><td>把文本（或图像）转换成一组数字向量，语义相近的内容向量距离也近。是 RAG 和语义搜索的基础。</td></tr>
+      <tr><td>Vector DB</td><td>向量数据库</td><td>专门存储和检索向量的数据库（如 FAISS、Milvus、Chroma），用于 RAG 中"根据语义找相关资料"。</td></tr>
+    </tbody>
+  </table>
+
+  <h3>应用与范式</h3>
+  <table class="table">
+    <thead>
+      <tr><th>缩写 / 英文</th><th>中文</th><th>一句话解释</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Agent</td><td>智能体</td><td>能自主规划任务、调用工具、完成多步工作流的 AI 程序。不只是聊天，而是"会干活的助手"。</td></tr>
+      <tr><td>RAG</td><td>检索增强生成</td><td>Retrieval-Augmented Generation——让模型在回答前先从你的知识库中检索相关资料，再基于资料生成回答。解决幻觉和私有数据问题。</td></tr>
+      <tr><td>Prompt</td><td>提示词</td><td>你给模型的输入指令。写好 Prompt 是用好大模型的基本技能——"你怎么问，决定它怎么答"。</td></tr>
+      <tr><td>Few-shot / Zero-shot</td><td>少样本 / 零样本</td><td>Few-shot：在 Prompt 里给几个例子让模型学习；Zero-shot：不给例子直接让模型做。</td></tr>
+      <tr><td>Chain-of-Thought</td><td>思维链</td><td>CoT——让模型"一步步思考"，在回答前先写出推理过程，显著提升复杂推理任务的准确率。</td></tr>
+      <tr><td>Tool Use</td><td>工具调用</td><td>让模型能调用外部工具（搜索、计算器、代码执行、API）来完成任务，是 Agent 的核心能力之一。</td></tr>
+      <tr><td>MCP</td><td>模型上下文协议</td><td>Model Context Protocol——一种标准化协议，让大模型能统一连接外部数据源和工具，减少重复集成。</td></tr>
+      <tr><td>Skill</td><td>技能 / 插件</td><td>封装好的可复用能力模块，让 Agent 能执行特定任务（如搜索、画图、文件处理）。</td></tr>
+    </tbody>
+  </table>
+
+  <h3>训练与微调</h3>
+  <table class="table">
+    <thead>
+      <tr><th>缩写 / 英文</th><th>中文</th><th>一句话解释</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pre-training</td><td>预训练</td><td>在海量数据上训练模型的基础能力，是最昂贵的阶段。一般个人和社团不做预训练。</td></tr>
+      <tr><td>SFT</td><td>监督微调</td><td>Supervised Fine-Tuning——在预训练模型基础上，用人工标注的"问答对"进一步训练，让模型学会按特定格式回答。</td></tr>
+      <tr><td>RLHF</td><td>人类反馈强化学习</td><td>Reinforcement Learning from Human Feedback——让人类对模型的回答打分，模型根据反馈优化，让输出更符合人类偏好。</td></tr>
+      <tr><td>Fine-tuning</td><td>微调</td><td>在已有模型基础上，用特定数据继续训练，让模型适应特定任务或领域。比预训练便宜得多。</td></tr>
+      <tr><td>LoRA</td><td>低秩适配</td><td>Low-Rank Adaptation——一种高效微调方法，只训练少量参数，大幅降低微调成本和显存需求。</td></tr>
+    </tbody>
+  </table>
+
+  <h3>工程与协作</h3>
+  <table class="table">
+    <thead>
+      <tr><th>缩写 / 英文</th><th>中文</th><th>一句话解释</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>API</td><td>应用程序接口</td><td>你通过 API 调用大模型服务（如豆包、DeepSeek 的 API），不用自己部署模型。</td></tr>
+      <tr><td>vibe coding</td><td>氛围编程 / AI 辅助编程</td><td>用自然语言描述需求，让 AI 生成代码，人主要负责描述和验证。社团做互动科普作品时常用。</td></tr>
+      <tr><td>PR</td><td>拉取请求</td><td>Pull Request——在 GitHub 上给别人的项目贡献代码的方式，经过 review 后合并。</td></tr>
+      <tr><td>Docker</td><td>容器化</td><td>把应用和依赖打包成一个"容器"，保证在任何机器上都能跑。解决"我电脑上能跑，你电脑上跑不了"的问题。</td></tr>
+    </tbody>
+  </table>
 
   <h2 id="venues">会议与期刊速查</h2>
-  <div class="placeholder">
-    <div class="ph-title">【待补充】会议 / 期刊列表</div>
-    <p>建议列出各方向常见会议与期刊及其领域、级别参考，例如：</p>
-    <ul>
-      <li>AI 综合：NeurIPS、ICML、ICLR、AAAI、IJCAI。</li>
-      <li>视觉：CVPR、ICCV、ECCV。</li>
-      <li>NLP / 语言：ACL、EMNLP、NAACL。</li>
-      <li>期刊：AI 领域主流期刊及评价体系说明。</li>
-    </ul>
-    <p>标注每个会议的投稿内容类型与大致时间线，方便有意向投稿 / 参赛的同学。</p>
+  <p>了解 AI 领域的主要学术会议，方便跟踪前沿和（未来）投稿：</p>
+  <table class="table">
+    <thead>
+      <tr><th>会议 / 期刊</th><th>领域</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>NeurIPS</td><td>AI 综合</td><td>神经信息处理系统大会，AI 领域最顶级会议之一，每年 12 月左右。</td></tr>
+      <tr><td>ICML</td><td>AI 综合</td><td>国际机器学习大会，与 NeurIPS 并列，每年 7 月左右。</td></tr>
+      <tr><td>ICLR</td><td>AI 综合</td><td>学习表征国际会议，大模型和 Transformer 方向的热门会议。</td></tr>
+      <tr><td>AAAI / IJCAI</td><td>AI 综合</td><td>综合性 AI 会议，覆盖面广，投稿量巨大。</td></tr>
+      <tr><td>CVPR / ICCV / ECCV</td><td>计算机视觉</td><td>视觉方向三大顶级会议。CVPR 每年 6 月，ICCV 奇数年。</td></tr>
+      <tr><td>ACL / EMNLP / NAACL</td><td>自然语言处理</td><td>NLP 方向三大会议。ACL 是旗舰，大模型论文常见。</td></tr>
+    </tbody>
+  </table>
+  <div class="callout cream">
+    <strong>对入门者的建议：</strong>不需要一开始就关注会议。先读 arXiv 上的预印本，等有了明确方向和项目经验后，再去看对应会议的论文集。
   </div>
 
   <h2 id="howto">如何维护本页</h2>
@@ -82,6 +135,7 @@
   <ul>
     <li><a href="fields.html">研究方向总览</a> —— 结合方向理解术语</li>
     <li><a href="papers.html">找资料与读论文</a> —— 读论文时搭配本页查词</li>
+    <li><a href="resources.html">资料总索引</a> —— 按方向找课程和教程</li>
   </ul>
 </div>
 

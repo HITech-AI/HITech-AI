@@ -33,7 +33,7 @@
     <div class="kicker">基础与学习</div>
     <h1>学习路线与基础知识</h1>
     <p class="lead">编程、数学、机器学习从哪里补起？社团整理了三条由浅入深的学习路线，并推荐用 AI 辅助学习。</p>
-    <span class="status-badge">骨架待补充 · 正文由社团成员撰写</span>
+    <span class="status-badge">持续更新 · 社团成员共同撰写</span>
   </div>
 </div>
 
@@ -49,45 +49,113 @@
   </div>
 
   <h2 id="routes">三条学习路线</h2>
-  <p>以下三条路线属于<strong>个人长期型社团活动</strong>：可自选一条，在社团内找学习搭子组队，部门提供答疑与支持。由浅入深，任选其一。</p>
+  <p>以下三条路线属于<strong>个人长期型社团活动</strong>：可自选一条，在社团内找学习搭子组队，部门提供答疑与支持。三条路线不是互斥的——入门阶段建议先从"Agent 应用线"获得正反馈，再根据兴趣向"Python 工程线"或"ML/DL 理论线"深入。</p>
 
+  <h3>路线一：Agent 应用线（自顶向下，最快上手）</h3>
+  <p>从用 AI 工具和搭建 Agent 应用开始，遇到问题再下沉到模型原理。适合想快速做出作品、对"AI 能做什么"好奇的同学。</p>
   <table class="table">
     <thead>
-      <tr><th>路线</th><th>方向</th><th>入口</th></tr>
+      <tr><th>阶段</th><th>内容</th><th>可完成练习</th><th>预计时长</th></tr>
     </thead>
     <tbody>
-      <tr><td>自顶向下（应用 → 原理）</td><td>Agent 应用 → 大模型 / Transformer → PyTorch，逐层下沉</td><td><a href="https://hello-agents.datawhale.cc/#/" target="_blank">hello-agents 教程</a></td></tr>
-      <tr><td>AI Engineering from Scratch</td><td>自底向上系统课：数学 → ML → DL → LLM → Agent</td><td><a href="https://aieng-zh.cn/" target="_blank">aieng-zh.cn</a></td></tr>
-      <tr><td>LAMDA Lab-RoadMap</td><td>AIMA 教材 + Python 基础的学院派路线</td><td><a href="https://github.com/LAMDA-NeSy/Lab-RoadMap" target="_blank">GitHub 路线</a></td></tr>
+      <tr><td>导学</td><td>Python 基础、文件读写、GitHub 协作、运行环境</td><td>运行示例、整理资源卡、提交学习记录</td><td>1–2 周</td></tr>
+      <tr><td>基础</td><td>模型调用 API、提示工程与上下文、工具函数、Skill 编写</td><td>亲手编写/修改一个工具函数</td><td>2–3 周</td></tr>
+      <tr><td>实战</td><td>资料检索与 RAG，制作一个简单 Agent</td><td>交付可运行小作品，附来源与使用说明</td><td>约 3 周</td></tr>
     </tbody>
   </table>
+  <p>推荐资源：<a href="https://hello-agents.datawhale.cc/#/" target="_blank">hello-agents 教程</a>（Datawhale 出品，Agent 应用 → 大模型 → PyTorch 逐层下沉）。社团 Agent 训练营（参考 rCore 训练营模式，Python + Agent，六到八周）即沿此路线设计。</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】路线使用说明</div>
-    <p>为每条路线补充：每周建议投入、需要哪些前置基础、社团里谁能答疑、如何组队找搭子。</p>
+  <h3>路线二：Python 工程线（自底向上，打牢代码功底）</h3>
+  <p>从 Python 编程和工程实践起步，逐步过渡到 ML 工程化。适合计算机/电气/大数据等有编程基础或想系统补工程能力的同学。</p>
+  <table class="table">
+    <thead>
+      <tr><th>阶段</th><th>内容</th><th>可完成练习</th><th>预计时长</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Python 基础</td><td>语法、数据结构、函数、文件读写、异常处理</td><td>写一个命令行小工具（如文件批量重命名）</td><td>3–4 周</td></tr>
+      <tr><td>工程与协作</td><td>Git/GitHub、Markdown、虚拟环境、依赖管理、Docker 入门</td><td>向社团 docs 仓库提交一次 PR</td><td>2–3 周</td></tr>
+      <tr><td>ML 工程</td><td>用 scikit-learn 跑通经典模型、数据预处理、模型部署</td><td>完成一个结构化数据预测项目</td><td>4–6 周</td></tr>
+    </tbody>
+  </table>
+  <p>推荐资源：<a href="https://aieng-zh.cn/" target="_blank">AI Engineering from Scratch</a>（aieng-zh.cn，自底向上系统课：数学 → ML → DL → LLM → Agent）。</p>
+
+  <h3>路线三：ML/DL 理论线（学院派，深耕原理）</h3>
+  <p>从数学基础到机器学习、深度学习，系统理解模型原理。适合打算深入科研、读研或参加算法竞赛的同学。</p>
+  <table class="table">
+    <thead>
+      <tr><th>阶段</th><th>内容</th><th>可完成练习</th><th>预计时长</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>数学基础</td><td>线性代数、微积分、概率统计——补到能理解 ML 公式</td><td>手推梯度下降、交叉熵公式</td><td>4–6 周</td></tr>
+      <tr><td>机器学习</td><td>西瓜书核心章节：线性回归、决策树、SVM、集成学习</td><td>用 numpy 手写一个简单模型</td><td>6–8 周</td></tr>
+      <tr><td>深度学习</td><td>PyTorch 入门、CNN、RNN、Transformer 架构</td><td>复现一个经典小模型（如 MNIST 分类）</td><td>8–12 周</td></tr>
+    </tbody>
+  </table>
+  <p>推荐资源：<a href="https://github.com/LAMDA-NeSy/Lab-RoadMap" target="_blank">LAMDA Lab-RoadMap</a>（AIMA 教材 + Python 基础的学院派路线）。书籍推荐周志华《机器学习》（西瓜书）、李沐《动手学深度学习》。</p>
+
+  <div class="callout cream">
+    <strong>怎么组队找搭子：</strong>选同一条路线的人天然有共同进度。在社团群里说一声"我在走 XX 路线，第 X 周，找搭子"，技术部骨干会帮忙对接。每条路线都有答疑渠道，遇到卡住的地方直接在群里问。
   </div>
 
   <h2 id="basics">基础知识补全</h2>
   <p>无论选哪条路线，下面几块基础都值得先有个抓手：</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】基础知识清单</div>
-    <p>按板块列出推荐资源与"掌握到什么程度"的验收标准：</p>
-    <ul>
-      <li><strong>编程</strong>：Python 基础、文件读写、环境（建议给出零基础入门资源）。</li>
-      <li><strong>数学</strong>：线性代数、微积分、概率统计——补到够理解 ML 公式即可。</li>
-      <li><strong>机器学习</strong>：模型调用、提示与上下文、工具函数 / Skill（对应 Agent 训练营基础阶段）。</li>
-      <li><strong>协作</strong>：GitHub 基本操作（见 <a href="collaboration.html">协作与合作</a>）。</li>
-    </ul>
-  </div>
+  <h3>编程</h3>
+  <ul>
+    <li><strong>Python 基础</strong>：变量、条件、循环、函数、列表/字典、文件读写。验收标准：能独立写一个 50 行左右的命令行小工具。</li>
+    <li><strong>环境管理</strong>：会用虚拟环境（venv / conda），知道 pip 装包。</li>
+    <li><strong>推荐资源</strong>：Python 官方教程（中文版）、廖雪峰 Python 教程、Datawhale Python 入门课。</li>
+  </ul>
+
+  <h3>数学</h3>
+  <ul>
+    <li><strong>线性代数</strong>：向量、矩阵乘法、特征值——补到能看懂 Transformer 里的矩阵运算即可。</li>
+    <li><strong>概率统计</strong>：概率分布、期望、贝叶斯——理解模型为什么用交叉熵损失。</li>
+    <li><strong>微积分</strong>：偏导、链式法则——理解梯度下降。</li>
+    <li><strong>建议</strong>：不用系统学完整本教材，结合 ML 课程遇到什么补什么。</li>
+  </ul>
+
+  <h3>机器学习</h3>
+  <ul>
+    <li>理解"训练/验证/测试"的基本概念，知道什么是过拟合、欠拟合。</li>
+    <li>会用 scikit-learn 跑通一个经典分类/回归任务。</li>
+    <li>对应 Agent 训练营基础阶段：模型调用、提示与上下文、工具函数/Skill。</li>
+  </ul>
+
+  <h3>协作</h3>
+  <ul>
+    <li>GitHub 基本操作：注册、创建仓库、commit/push、Issue、PR。详见<a href="collaboration.html">协作与合作</a>。</li>
+    <li>Markdown 写作：能写基本标题、列表、代码块、表格。</li>
+  </ul>
 
   <h2 id="tools">用 AI 辅助学习</h2>
-  <p>AI 可以是学习路上的"贴身助教"：帮你解释概念、定位报错、整理笔记、生成练习。</p>
+  <p>AI 可以是学习路上的"贴身助教"：帮你解释概念、定位报错、整理笔记、生成练习。下面是社团成员亲测好用的工具类型：</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】AI 工具资源卡</div>
-    <p>整理社团成员亲测好用的 AI 工具，说明用途、上手难度与适用场景，例如：通用对话助手、AI 编程助手、AI 检索 / 资料整理、AI 画图 / 汇报等。</p>
-    <p>建议按"资源卡"格式沉淀：工具名 → 能做什么 → 怎么开始用 → 谁整理过。</p>
+  <div class="cards">
+    <div class="card">
+      <span class="badge">通用对话助手</span>
+      <div class="t">豆包 / DeepSeek / Kimi</div>
+      <div class="d">解释概念、翻译、写文案、头脑风暴。用法：把不懂的概念贴给它，让它用"给高中生讲"的方式解释一遍。</div>
+    </div>
+    <div class="card">
+      <span class="badge">AI 编程助手</span>
+      <div class="t">Cursor / GitHub Copilot / 豆包编程</div>
+      <div class="d">写代码、解报错、生成代码注释。用法：遇到报错先把错误信息贴给它，让它解释原因并给出修复建议。</div>
+    </div>
+    <div class="card">
+      <span class="badge">AI 检索与资料整理</span>
+      <div class="t">Kimi / 豆包联网搜索</div>
+      <div class="d">长文档总结、资料检索、对比不同工具。用法：把论文 PDF 或长文档丢给它，让它提炼摘要和关键结论。</div>
+    </div>
+    <div class="card">
+      <span class="badge">AI 画图与汇报</span>
+      <div class="t">豆包画图 / 即梦 / Canva AI</div>
+      <div class="d">生成海报、示意图、PPT 配图。用于活动宣传和作业汇报。</div>
+    </div>
+  </div>
+
+  <div class="callout cream">
+    <strong>使用原则：</strong>AI 是助教不是代笔。让它帮你解释和排查，但不要直接让它写完作业——否则你永远学不会。把 AI 的回答拿去验证、追问"为什么"，才是正确用法。
   </div>
 
   <h2 id="related">相关栏目</h2>
@@ -95,6 +163,7 @@
     <li><a href="getting-started.html">从这里开始 · 入门指南</a> —— 先动手做第一个小项目</li>
     <li><a href="fields.html">研究方向总览</a> —— 学完基础后选方向</li>
     <li><a href="resources.html">资料总索引</a> —— 按主题浏览更多课程与教程</li>
+    <li><a href="departments/tech.html">技术部</a> —— 学习路线的答疑与带队部门</li>
   </ul>
 </div>
 

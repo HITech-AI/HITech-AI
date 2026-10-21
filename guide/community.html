@@ -33,7 +33,7 @@
     <div class="kicker">经历与生活 · 看看外面</div>
     <h1>社区与动态</h1>
     <p class="lead">社团活动归档、技术博客、研究社区，以及对外看看——了解大家在做什么，也看看外面的世界。</p>
-    <span class="status-badge">骨架待补充 · 正文由社团成员撰写</span>
+    <span class="status-badge">持续更新 · 社团成员共同撰写</span>
   </div>
 </div>
 
@@ -41,7 +41,8 @@
   <div class="toc">
     <div class="toc-title">本页目录</div>
     <ol>
-      <li><a href="#activity">社团活动归档</a></li>
+      <li><a href="#calendar">社团活动日历</a></li>
+      <li><a href="#activity">活动归档</a></li>
       <li><a href="#blog">技术博客与经验</a></li>
       <li><a href="#industry">AI 时代行业观察</a></li>
       <li><a href="#outside">研究社区与外部动态</a></li>
@@ -49,42 +50,76 @@
     </ol>
   </div>
 
-  <h2 id="activity">社团活动归档</h2>
-  <p>把每一场活动沉淀下来，让走过的路有迹可循：</p>
+  <h2 id="calendar">社团活动日历</h2>
+  <p>社团日常活动有固定节奏，按学期排期。以下是常规活动安排：</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】活动归档列表</div>
-    <p>建议按时间列出：活动名称 → 时间 → 做了什么 → 产出物链接。例如首场《GitHub 与 AI Agent 入门》、Agent 训练营各阶段、研讨部双周研讨等。</p>
-    <p>归档源见 <a href="https://github.com/HITech-AI/docs" target="_blank">docs 活动归档</a>。</p>
+  <table class="table">
+    <thead>
+      <tr><th>活动类型</th><th>频率</th><th>内容</th><th>主办部门</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>技术分享 / 讲座</td><td>双周一次</td><td>主题包括：GitHub 与 AI Agent 入门、AI 工具应用、AI 辅助编程与调试、成员经验分享等。每次 110–120 分钟，线下实操 + 线上同步。</td><td>技术部</td></tr>
+      <tr><td>研讨活动</td><td>双周一次</td><td>围绕一个议题做深度讨论：理论陈述 + 技术实证 + 分组讨论。每学期 4 期议题，如"AI 会怎样重构就业""个人的不可替代性从哪来"。</td><td>研讨部</td></tr>
+      <tr><td>Agent 训练营</td><td>春季学期，六到八周</td><td>集中补齐编程与实践基础，分导学、基础、实战三阶段。参考 rCore 训练营模式，Python + Agent，独立仓库 agent-bootcamp。</td><td>技术部</td></tr>
+      <tr><td>学期黑客松</td><td>每学期末</td><td>围绕已有项目组织内部黑客松、代码与文档交流、成果演示。现场临时组队，48 小时内做出一个作品。</td><td>技术部 + 实践部</td></tr>
+      <tr><td>对外公开活动</td><td>不定期</td><td>与 Datawhale 等外部组织合作的公开活动，如 AI+X 高校行。面向全校开放，用于招新和扩大影响力。</td><td>四部门联合</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout cream">
+    <strong>活动通知：</strong>具体时间和地点通过社团微信群、QQ 群和宣传部公众号发布。建议入群后开启通知，活动信息一般提前 3–5 天发布。
   </div>
+
+  <h2 id="activity">活动归档</h2>
+  <p>把每一场活动沉淀下来，让走过的路有迹可循。以下是已计划和已完成的活动：</p>
+
+  <ul>
+    <li><strong>《GitHub 与 AI Agent 入门》</strong>（2026 秋，首场对外公开活动）—— 与 Datawhale《AI 新手村》高校行融合，150 分钟线下实操。内容：认识 AI 与 Agent、GitHub 注册与基本操作、用 AI Agent 辅助完成一次开源协作。产出：每人完成一个 AI 小作品 + GitHub 仓库。</li>
+    <li><strong>Datawhale AI+X 高校行 · 哈工大场</strong>（2026 秋，计划 11 月落地）—— Datawhale 提供教程、物料和嘉宾支持，社团提供场地和组织。完成者获 Datawhale 证书。</li>
+    <li><strong>研讨部双周研讨</strong>（2026 秋持续）—— 第一学期四期议题：AI 重构就业、无用阶级争议、个人不可替代性、AI 对生产关系变革。每次 90 分钟，含技术实证环节。</li>
+    <li><strong>Agent 训练营</strong>（2027 春，计划）—— 六到八周，分导学、基础、实战三阶段。产出：每人交付一个可运行的小作品。</li>
+    <li><strong>学期黑客松</strong>（2027 春末，计划）—— 围绕 HIT-CampusAI 等项目做成果展示和迭代。</li>
+  </ul>
+  <p>完整活动归档见 <a href="https://github.com/HITech-AI/docs" target="_blank">docs 活动归档</a>。</p>
 
   <h2 id="blog">技术博客与经验</h2>
-  <div class="placeholder">
-    <div class="ph-title">【待补充】社团博客 / 经验分享</div>
-    <p>收集成员的学习总结、项目复盘、踩坑记录与"方法论思考"（问题 → 方法 → 验证 → 限制 → 个人判断），经本人同意后公开分享。</p>
-  </div>
+  <p>社团鼓励成员把学习过程中的思考和经验写成文章。每学期征集简短方法论思考，经本人同意后在社团渠道分享。</p>
+  <ul>
+    <li><strong>学习总结</strong>：学完一门课或一个方向后，写一篇"我是怎么学的"。</li>
+    <li><strong>项目复盘</strong>：做完一个项目后，记录做了什么、遇到什么坑、怎么解决的。</li>
+    <li><strong>踩坑记录</strong>：环境配置、报错排查、工具使用——这些"小事"对下一个人特别有用。</li>
+    <li><strong>方法论思考</strong>：按"问题 → 方法 → 验证 → 限制 → 个人判断"的结构写。这是社团特别鼓励的产出形式。</li>
+  </ul>
+  <p>博客文章将沉淀在 docs 仓库的博客目录中，优秀文章由宣传部推荐到公众号和 B 站。</p>
 
   <h2 id="industry">AI 时代行业观察</h2>
   <div class="callout cream">研讨部的常规产出：把每次研讨结论整理成《AI 时代行业观察》小册子——AI 对生产关系、就业环境、岗位结构的分析与观察，落回一句话：<strong>"这对我们这批人有什么用？"</strong></div>
-
-  <div class="placeholder">
-    <div class="ph-title">【待补充】行业观察入口</div>
-    <p>放《AI 时代行业观察》小册子的目录或下载入口，以及每期议题的研讨纪要链接。</p>
-  </div>
+  <p>研讨部第一学期四期议题的产出将汇总为《AI 时代行业观察》第一辑：</p>
+  <ul>
+    <li>议题一：AI 会怎样重构就业？——产出岗位替代调研小报告。</li>
+    <li>议题二："无用阶级"是危言耸听吗？——产出 AI 能力边界清单。</li>
+    <li>议题三：大模型时代，个人的不可替代性从哪来？——产出个人竞争力分析模板。</li>
+    <li>议题四：AI 对生产关系的变革——产出行业观察案例集。</li>
+  </ul>
+  <p>每期研讨纪要（事实 + 观点 + 分歧 + 共识）会在研讨部归档中发布。</p>
 
   <h2 id="outside">研究社区与外部动态</h2>
   <p>关注外面的研究社区与技术动态，让视野不被社团围墙限制：</p>
-
-  <div class="placeholder">
-    <div class="ph-title">【待补充】外部社区与动态</div>
-    <p>建议整理：值得关注的研究社区（如 OpenEnvision、Lumina、AgentHub 等）、技术博客平台、以及研究者 / 实验室动态的追踪入口。</p>
-  </div>
+  <ul>
+    <li><strong>Datawhale</strong>：国内活跃的开源学习社区，有完善的课程体系和高校行活动。<a href="https://datawhale.club" target="_blank">datawhale.club</a></li>
+    <li><strong>Hugging Face 博客</strong>：最新的模型发布、教程和技术解读。<a href="https://huggingface.co/blog" target="_blank">huggingface.co/blog</a></li>
+    <li><strong>arXiv cs.CL / cs.CV</strong>：最新论文预印本，每周刷一次标题就能跟上前沿。</li>
+    <li><strong>Papers with Code</strong>：论文 + 代码 + 排行榜，看哪个方向最活跃。<a href="https://paperswithcode.com" target="_blank">paperswithcode.com</a></li>
+    <li><strong>国内 AI 动态</strong>：关注 Qwen（通义千问）、DeepSeek、智谱等国产大模型的开源动态。</li>
+  </ul>
 
   <h2 id="related">相关栏目</h2>
   <ul>
     <li><a href="collaboration.html">协作与合作</a> —— 参与活动与项目</li>
     <li><a href="papers.html">找资料与读论文</a> —— 沉淀你的阅读</li>
     <li><a href="resources.html">资料总索引</a> —— 更多博客与课程资源</li>
+    <li><a href="departments/research.html">研讨部</a> —— 行业观察与深度讨论</li>
+    <li><a href="departments/promotion.html">宣传部</a> —— 活动宣传与新媒体运营</li>
   </ul>
 </div>
 

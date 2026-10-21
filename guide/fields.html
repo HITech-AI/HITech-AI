@@ -33,7 +33,7 @@
     <div class="kicker">认识方向</div>
     <h1>研究方向总览</h1>
     <p class="lead">AI 有哪些方向？每个方向分别在做什么？先宏观地认识一遍，再挑选自己感兴趣的方向深入。</p>
-    <span class="status-badge">骨架待补充 · 正文由社团成员撰写</span>
+    <span class="status-badge">持续更新 · 社团成员共同撰写</span>
   </div>
 </div>
 
@@ -49,46 +49,79 @@
   </div>
 
   <h2 id="map">一张图看懂 AI 方向</h2>
-  <p>先建立整体认知：从大语言模型、Agent、计算机视觉、多模态、生成模型、强化学习、世界模型、具身智能，到效率与系统、AI 交叉学科。</p>
-
-  <div class="placeholder">
-    <div class="ph-title">【待补充】方向总览图 / 编年史</div>
-    <p>放一张 AI 方向全景图（可用文字 + 链接组织），或一段 AI 发展编年史，帮助建立宏观认知。</p>
-  </div>
+  <p>先建立整体认知。当前 AI 的研究版图大致可以这样理解：</p>
+  <ul>
+    <li><strong>基座层</strong>：大语言模型（LLM）——理解和生成语言的基础模型，是当前几乎所有 AI 应用的底座。</li>
+    <li><strong>应用层</strong>：Agent（智能体）、RAG（检索增强生成）——在基座模型之上，让模型能调用工具、查资料、完成多步任务。</li>
+    <li><strong>感知层</strong>：计算机视觉（CV）、多模态——让模型"看见"图像、"听到"声音，并把语言和视觉打通。</li>
+    <li><strong>生成层</strong>：生成模型（Diffusion、GAN）——从数据分布中生成全新的图像、音频、视频内容。</li>
+    <li><strong>决策层</strong>：强化学习、世界模型、具身智能——让 AI 能在环境中交互、做决策、控制物理机器人。</li>
+    <li><strong>系统层</strong>：效率与系统（模型压缩、推理优化、分布式训练）——让大模型跑得更快、更省。</li>
+  </ul>
+  <p>对社团来说，当前最贴近、也最容易出成果的方向是 <strong>Agent</strong> 和 <strong>RAG</strong>——它们不需要你从零训练大模型，而是在已有模型之上做应用开发，门槛低、见效快。门面项目 HIT-CampusAI 就是一个基于 RAG + Agent 的校园 AI 助手。</p>
 
   <h2 id="directions">主要方向速览</h2>
-  <p>下面为每个方向预留一张"方向卡片"的位置（名称 → 一句话它在做什么 → 代表问题 → 入门入口）：</p>
+  <p>下面每个方向说明：它在做什么、适合什么兴趣的人、社团里有没有对应的项目或活动。</p>
 
   <div class="cards">
-    <div class="card"><span class="badge">方向</span><div class="t">大语言模型</div><div class="d">理解、生成、推理。代表问题与入门入口待补充。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">Agent（智能体）</div><div class="d">让模型规划、调用工具、完成任务。与社团训练营最贴近。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">计算机视觉</div><div class="d">让模型读懂图像。代表问题与入门入口待补充。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">多模态</div><div class="d">图像、语言与声音的统一理解。待补充。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">生成模型</div><div class="d">从数据分布生成新内容。待补充。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">强化学习</div><div class="d">在交互中学习决策。待补充。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">世界模型 · 具身智能</div><div class="d">从看见到行动，让 AI 理解并作用于世界。待补充。</div></div>
-    <div class="card"><span class="badge">方向</span><div class="t">效率与系统 · AI 交叉</div><div class="d">让模型更快更省，与其他学科交叉。待补充。</div></div>
-  </div>
-
-  <div class="placeholder">
-    <div class="ph-title">【待补充】方向卡片细化</div>
-    <p>为每个方向补充：它在解决什么问题、有什么代表模型 / 论文、社团有没有对应的项目或活动、推荐的入门资料。</p>
-    <p>可与 <a href="resources.html">资料总索引</a> 联动，把每个方向的代表论文、课程链接挂进来。</p>
+    <div class="card">
+      <span class="badge">方向 · 基座</span>
+      <div class="t">大语言模型（LLM）</div>
+      <div class="d"><strong>在做什么：</strong>研究和预训练能理解、生成和推理语言的大模型（如 GPT、Llama、Qwen 等）。核心问题包括：模型架构（Transformer）、预训练数据、指令微调（SFT）、人类反馈强化学习（RLHF）。<br><strong>适合谁：</strong>对"模型为什么能说话"好奇、愿意啃数学和论文、有读研打算的同学。这个方向需要较强的理论功底和算力。<br><strong>社团对应：</strong>当前以使用和调优为主，小模型训练/微调是后期进阶方向。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 应用</span>
+      <div class="t">Agent（智能体）</div>
+      <div class="d"><strong>在做什么：</strong>让大模型不只是"聊天"，而是能自主规划任务、调用工具（搜索、代码执行、文件读写）、完成多步工作流。比如一个 Agent 能自动搜索资料、整理笔记、生成报告。<br><strong>适合谁：</strong>喜欢动手做产品、对"AI 帮我干活"感兴趣、不想一上来就啃论文的同学。这是社团 Agent 训练营的主线。<br><strong>社团对应：</strong>Agent 训练营（六到八周）、GitHub 信息检索 Agent、校园问答 Agent。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 应用</span>
+      <div class="t">RAG（检索增强生成）</div>
+      <div class="d"><strong>在做什么：</strong>让大模型在回答前先"查资料"——从你的文档、知识库、网页中检索相关内容，再基于检索结果生成回答。解决大模型"不知道你私有数据"和"幻觉"的问题。技术涉及向量嵌入（Embedding）、向量数据库（Vector DB）、检索策略。<br><strong>适合谁：</strong>对"给 AI 装一个知识库"感兴趣、想做实用工具的同学。<br><strong>社团对应：</strong>HIT-CampusAI（校园 AI 助手，用 FAISS 做向量检索）、AI 知识与信息 Agent。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 感知</span>
+      <div class="t">计算机视觉（CV）</div>
+      <div class="d"><strong>在做什么：</strong>让模型读懂图像和视频——分类、检测、分割、人脸识别、医学影像分析等。核心技术包括 CNN、ViT（视觉 Transformer）。<br><strong>适合谁：</strong>对图像和视觉感兴趣、喜欢处理数据的同学。<br><strong>社团对应：</strong>目前以了解和体验为主，后续可作为项目方向拓展。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 感知</span>
+      <div class="t">多模态</div>
+      <div class="d"><strong>在做什么：</strong>让模型同时理解文本、图像、音频、视频等多种模态——比如"看图说话"、"听一段描述画一张图"。GPT-4V、Qwen-VL 都是多模态模型。<br><strong>适合谁：</strong>对"AI 能看能听"感兴趣、想做有趣交互作品的同学。<br><strong>社团对应：</strong>互动科普作品（vibe coding 制作交互演示）。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 生成</div>
+      <div class="t">生成模型</div>
+      <div class="d"><strong>在做什么：</strong>从数据分布中生成新内容——图像（Stable Diffusion）、音频（Sora）、文本（LLM）。核心技术是 Diffusion Model 和 GAN。<br><strong>适合谁：</strong>对创意和 AI 艺术感兴趣、想做生成式内容的同学。<br><strong>社团对应：</strong>宣传部可用于海报和视觉素材制作。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 决策</span>
+      <div class="t">强化学习与具身智能</div>
+      <div class="d"><strong>在做什么：</strong>让 AI 在环境中通过试错学习做决策（强化学习），并进一步控制机器人在物理世界中行动（具身智能）。比如让机器人学会走路、抓东西。<br><strong>适合谁：</strong>对机器人、控制、游戏 AI 感兴趣的同学（与电气、机械专业有交叉）。<br><strong>社团对应：</strong>远期方向，当前以了解为主。</div>
+    </div>
+    <div class="card">
+      <span class="badge">方向 · 系统</span>
+      <div class="t">效率与系统 · AI 交叉</div>
+      <div class="d"><strong>在做什么：</strong>让大模型跑得更快更省——模型量化、蒸馏、推理优化、分布式训练。同时包括 AI 与其他学科的交叉（AI+医疗、AI+法律、AI+教育等）。<br><strong>适合谁：</strong>对系统工程、部署优化感兴趣，或有其他专业背景想做"AI+X"的同学。<br><strong>社团对应：</strong>Datawhale AI+X 高校行活动就是探索 AI 与各学科交叉。</div>
+    </div>
   </div>
 
   <h2 id="how">如何选择一个方向</h2>
   <div class="callout">先广度后深度：入门阶段不必锁定方向，多动手体验、多听部门分享；等有了兴趣与基础，再结合社团项目选择一个方向深入。</div>
-
-  <div class="placeholder">
-    <div class="ph-title">【待补充】选方向的方法</div>
-    <p>建议写入：如何通过讲座、研讨、小项目快速试错；社团当前有哪些项目与方向最缺人手；如何找对应方向的学长请教。</p>
-  </div>
+  <p>具体建议：</p>
+  <ul>
+    <li><strong>通过活动快速试错</strong>：参加双周技术分享和讲座，每个方向听 1–2 次分享，感受哪个让你"想自己动手试试"。</li>
+    <li><strong>从项目倒推方向</strong>：看社团当前在做的项目——HIT-CampusAI 对应 RAG/Agent，GitHub 信息检索 Agent 对应 Agent，校园问答 Agent 对应 RAG。哪个项目你最想参与，就从那个方向切入。</li>
+    <li><strong>找学长请教</strong>：通过部门活动或研讨部，找已经在某个方向做过项目的学长聊聊，了解真实的学习曲线和坑。</li>
+    <li><strong>社团当前缺人的方向</strong>：Agent 应用和 RAG 是目前最缺人手、也最容易出成果的方向——门面项目 HIT-CampusAI 需要持续维护和扩展。</li>
+  </ul>
 
   <h2 id="related">相关栏目</h2>
   <ul>
     <li><a href="learning.html">学习路线与基础知识</a> —— 确定方向后规划学习</li>
     <li><a href="papers.html">找资料与读论文</a> —— 用论文认识一个方向</li>
     <li><a href="glossary.html">术语与会议速查</a> —— 查方向里的术语与会议</li>
+    <li><a href="resources.html">资料总索引</a> —— 按方向找课程和论文</li>
   </ul>
 </div>
 

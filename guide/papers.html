@@ -33,7 +33,7 @@
     <div class="kicker">推进研究</div>
     <h1>找资料与读论文</h1>
     <p class="lead">学会找论文、读论文，是认识一个方向、推进一个项目的基本功。这里沉淀社团的检索方法与笔记工作流。</p>
-    <span class="status-badge">骨架待补充 · 正文由社团成员撰写</span>
+    <span class="status-badge">持续更新 · 社团成员共同撰写</span>
   </div>
 </div>
 
@@ -42,49 +42,98 @@
     <div class="toc-title">本页目录</div>
     <ol>
       <li><a href="#find">怎么找资料与论文</a></li>
-      <li><a href="#read">怎么读一篇论文</a></li>
+      <li><a href="#read">怎么读一篇论文（三遍法）</a></li>
       <li><a href="#workflow">论文阅读与笔记工作流</a></li>
+      <li><a href="#starter">入门推荐论文主题</a></li>
       <li><a href="#related">相关栏目</a></li>
     </ol>
   </div>
 
   <h2 id="find">怎么找资料与论文</h2>
-  <p>从哪找、用什么关键词、怎么判断一篇论文值不值得读——这里给出方法骨架：</p>
+  <p>找论文不是漫无目的地翻——先确定方向，再用工具精准检索，最后判断值不值得精读。</p>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】检索方法</div>
-    <p>建议写入：</p>
-    <ul>
-      <li>入口：Google Scholar、arXiv、语义检索工具、各方向顶会（见 <a href="glossary.html">术语与会议速查</a>）。</li>
-      <li>技巧：怎么用中英文关键词、怎么按引用与年份筛选、怎么顺藤摸瓜找相关工作。</li>
-      <li>判断：先看标题 / 摘要 / 图，决定要不要精读。</li>
-    </ul>
-  </div>
+  <h3>常用检索入口</h3>
+  <ul>
+    <li><strong><a href="https://arxiv.org" target="_blank">arXiv</a></strong>：AI 论文的首发平台，几乎所有大模型论文都先挂在 arXiv。按类别浏览（cs.CL 自然语言处理、cs.CV 计算机视觉、cs.AI 人工智能），或用关键词搜索。</li>
+    <li><strong><a href="https://scholar.google.com" target="_blank">Google Scholar</a></strong>：学术搜索引擎，按引用次数排序，能看到一篇论文被谁引用了。适合找"这个领域最经典的论文"。</li>
+    <li><strong><a href="https://www.semanticscholar.org" target="_blank">Semantic Scholar</a></strong>：AI 驱动的学术搜索，能自动生成论文摘要、梳理引用关系网，还能看到"这篇论文解决了什么问题"。</li>
+    <li><strong><a href="https://paperswithcode.com" target="_blank">Papers with Code</a></strong>：论文 + 代码的结合体。每篇论文附带开源实现和排行榜，适合想动手复现的人。</li>
+  </ul>
 
-  <h2 id="read">怎么读一篇论文</h2>
-  <div class="placeholder">
-    <div class="ph-title">【待补充】精读方法</div>
-    <p>建议给出：读论文的顺序（摘要 → 引言 → 方法 → 实验），每部分的阅读目标；哪些段落可以直接跳过。</p>
+  <h3>检索技巧</h3>
+  <ul>
+    <li><strong>关键词组合</strong>：用中英文关键词交替搜索。比如搜 "RAG" 的同时也搜 "检索增强生成"，能找到中文综述和教程。</li>
+    <li><strong>按引用和年份筛选</strong>：先看高引用（&gt;1000）的经典论文建立基础，再看近一年（2025–2026）的新论文了解前沿。</li>
+    <li><strong>顺藤摸瓜</strong>：找到一篇好论文后，看它的"Related Work"（相关工作）和参考文献列表——这是该方向最核心的论文集。</li>
+    <li><strong>判断值不值得读</strong>：先看标题 → 摘要 → 关键图。如果三部分看完你觉得"这跟我要做的事有关"，再精读；否则直接跳过，不要有心理负担。</li>
+  </ul>
+
+  <h2 id="read">怎么读一篇论文（三遍法）</h2>
+  <p>读论文不需要从头到尾逐字读。推荐"三遍法"，每遍目标不同，时间投入递减：</p>
+
+  <table class="table">
+    <thead>
+      <tr><th>遍数</th><th>时间</th><th>读什么</th><th>目标</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>第一遍 · 快速浏览</td><td>5–10 分钟</td><td>标题、摘要、引言、图表、结论</td><td>了解这篇论文在做什么、用了什么方法、效果如何。判断要不要进入第二遍。</td></tr>
+      <tr><td>第二遍 · 精读</td><td>1–2 小时</td><td>方法部分、实验设置、主要结果图表</td><td>理解方法的核心思路和关键实验。忽略数学推导细节（除非你要复现）。</td></tr>
+      <tr><td>第三遍 · 复现级</td><td>数小时–数天</td><td>完整推导、代码实现、消融实验</td><td>目标是从零复现。适合深入研究或要做相关项目时。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout cream">
+    <strong>跳过策略：</strong>相关工作（Related Work）通常可以跳过；数学推导如果当前用不到，可以先标记"以后再看"；附录里的细节一般不用读。读论文的目的是获取你需要的信息，不是把论文背下来。
   </div>
 
   <h2 id="workflow">论文阅读与笔记工作流</h2>
   <div class="callout cream">好记性不如烂笔头：读一篇论文就该留下一篇可复用的笔记。社团鼓励用 Markdown 沉淀，并联动 <a href="collaboration.html">docs 文档库</a>。</div>
 
-  <div class="placeholder">
-    <div class="ph-title">【待补充】笔记模板与工作流</div>
-    <p>建议提供：</p>
-    <ul>
-      <li>一篇论文笔记的模板：背景 → 方法 → 结果 → 我的想法 / 可复现点。</li>
-      <li>管理方式：本地文件夹 + GitHub 同步，或用 AI 辅助做"科研简报"。</li>
-      <li>阅读深度分级：泛读 / 精读 / 复现，各适合什么场景。</li>
-    </ul>
-  </div>
+  <h3>笔记模板</h3>
+  <p>每篇论文笔记建议包含以下结构：</p>
+  <ul>
+    <li><strong>标题与链接</strong>：论文标题、作者、arXiv 链接、发表日期。</li>
+    <li><strong>一句话总结</strong>：这篇论文解决了什么问题？（强迫自己用一句话说清）</li>
+    <li><strong>背景与动机</strong>：为什么要做这件事？之前的方法有什么不足？</li>
+    <li><strong>方法核心</strong>：他们提出了什么方法？用最朴素的话解释，不要复制论文术语。</li>
+    <li><strong>关键结果</strong>：在什么数据集上？比之前好多少？（列 2–3 个最重要的数字）</li>
+    <li><strong>我的想法 / 可复现点</strong>：这篇论文对我有什么用？有没有可以复现的实验？局限性是什么？</li>
+  </ul>
+
+  <h3>管理方式</h3>
+  <ul>
+    <li><strong>本地 + GitHub 同步</strong>：在本地建一个论文笔记文件夹，用 Markdown 写笔记，定期 push 到 GitHub 仓库。这样笔记永远不会丢，也方便分享。</li>
+    <li><strong>AI 辅助做科研简报</strong>：把论文 PDF 丢给 AI 对话工具，让它按上面的模板生成初稿，你再修改补充——这比从零写快得多，但一定要自己核对，AI 可能会编造内容。</li>
+    <li><strong>阅读深度分级</strong>：</li>
+  </ul>
+  <table class="table">
+    <thead>
+      <tr><th>深度</th><th>适用场景</th><th>投入</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>泛读</td><td>了解一个方向在做什么、跟谁聊都能接上话</td><td>每篇 10–15 分钟</td></tr>
+      <tr><td>精读</td><td>要做相关项目、需要借鉴方法</td><td>每篇 1–2 小时 + 笔记</td></tr>
+      <tr><td>复现</td><td>要做深入研究、竞赛或论文写作</td><td>每篇数小时到数天 + 代码</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="starter">入门推荐论文主题</h2>
+  <p>如果你是第一次读论文，建议从以下主题入手——这些论文相对好读、影响大、和社团方向贴近：</p>
+  <ul>
+    <li><strong>Transformer 架构</strong>：《Attention Is All You Need》——理解现代大模型的基石。虽然是 2017 年的论文，但几乎所有后续工作都建立在它之上。</li>
+    <li><strong>RAG（检索增强生成）</strong>：《Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks》——理解为什么需要"先查资料再回答"。</li>
+    <li><strong>Agent 范式</strong>：《ReAct: Synergizing Reasoning and Acting in Language Models》——理解 Agent 如何"边想边做"。</li>
+    <li><strong>提示工程</strong>：《Chain-of-Thought Prompting Elicits Reasoning in Large Language Models》——理解"让模型一步步思考"为什么有效。</li>
+    <li><strong>Embedding 与向量检索</strong>：理解 RAG 的底层技术，为什么文本可以被转成向量并做相似度搜索。</li>
+  </ul>
+  <p>找到这些论文的方法：在 Google Scholar 或 Semantic Scholar 搜论文标题，优先看有开源代码的版本。</p>
 
   <h2 id="related">相关栏目</h2>
   <ul>
     <li><a href="fields.html">研究方向总览</a> —— 带着方向感去读论文</li>
     <li><a href="glossary.html">术语与会议速查</a> —— 查论文里的术语与会议</li>
     <li><a href="resources.html">资料总索引</a> —— 找已整理好的论文选读清单</li>
+    <li><a href="departments/research.html">研讨部</a> —— 每学期组织论文与议题研讨</li>
   </ul>
 </div>
 
